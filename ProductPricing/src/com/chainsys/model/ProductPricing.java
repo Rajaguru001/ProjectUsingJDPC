@@ -1,4 +1,4 @@
-package com.chainsys.DAO;
+package com.chainsys.model;
 
 public class ProductPricing {
 	

@@ -2,7 +2,7 @@ package com.chainsys.model;
 
 import java.sql.SQLException;
 
-import com.chainsys.DAO.UserDAO;
+import com.chainsys.dao.UserDAO;
 
 public class User1 implements  UserDAO {
 	String firstname;
