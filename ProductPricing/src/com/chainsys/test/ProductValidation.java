@@ -44,11 +44,11 @@ public class ProductValidation {
 		}
 	}
 
-	public static void validage(int age) throws AgeBelowEighteenException {
+	public static void validage(int age) throws AgeBelowEightException {
 
 		if (age < 8) {
 
-			throw new AgeBelowEighteenException();
+			throw new AgeBelowEightException();
 
 		}
 
@@ -64,7 +64,7 @@ public class ProductValidation {
 				age = sc.nextInt();
 				validage(age);
 				return age;
-			} catch (AgeBelowEighteenException ex) {
+			} catch (AgeBelowEightException ex) {
 				System.out.println("Caught the exception");
 				System.out.println("Exception occured: " + ex);
 				System.out.println("enter age greater 8:");
