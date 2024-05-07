@@ -1,6 +1,7 @@
 package com.chainsys.test;
 
 import java.sql.Connection;
+
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -12,6 +13,8 @@ import com.chainsys.dao.Check;
 import com.chainsys.model.ProductPricing;
 import com.chainsys.model.User1;
 import com.chainsys.util.DataChecking;
+
+//import productpricingjdpc.ProductFunction;
 
 //import productpricingjdpc.Check;
 //import productpricingjdpc.DataChecking;
@@ -58,14 +61,22 @@ public class ProductFunction {
 
 					System.out.println("Last Name:");
 					String lastname = sc.next();
+					u.setLastname(lastname);
 
 					String pwd = ProductValidation.pwd();
 					u.setPassword(pwd);
 
 					String phonenumber = ProductValidation.phone();
 					u.setPhonenumber(phonenumber);
+					
+					
+					int age=ProductValidation.getage();
+					u.setAge(age);
 
 					u.getFirstname();
+					u.getLastname();
+					u.getAge();
+				
 					check.Register(u);
 					System.out.println("phone number:" + u.getPhonenumber());
 				}
@@ -202,14 +213,19 @@ public class ProductFunction {
 						System.out.println(rsmd.getColumnName(i) + " : " + columnValue + " ");
 					}
 					System.out.println("");
-
+					
 				}
-			} else {
+				break;
+			}
+			
+		   else {
 				System.out.println("Enter the correct username");
 				admin = sc.next();
 				System.out.println("Enter the correct password");
 				pwd = sc.next();
 
+			}
+			
 			}
 
 			System.out.println("1)Add Product 2)Delete Product 3)update product 4)Exit");
@@ -251,11 +267,11 @@ public class ProductFunction {
 				break;
 			case 4:
 				System.exit(0);
-			break;
+			    break;
+			
 
 			}
+		
 
 		}
-		
-	}
 }

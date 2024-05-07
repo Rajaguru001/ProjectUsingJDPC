@@ -20,10 +20,13 @@ public class Check implements UserDAO{
 		prestm.setString(1, u.getUsername());	
 		ResultSet result=prestm.executeQuery();
 		if(!result.next()) {
-			String query="insert into jdpc values(?,?)";
+			String query="insert into jdpc(name,lastname,password,phonenumber,age)values(?,?,?,?,?)";
 			PreparedStatement ps=connection.prepareStatement(query);
 			ps.setString(1, u.getUsername());	
-			ps.setString(2, u.getPassword());
+			ps.setString(2,u.getLastname());
+			ps.setString(3, u.getPassword());
+			ps.setString(4,u.getPhonenumber());
+			ps.setInt(5,u.getAge());
 			ps.executeUpdate();
 			
 		}
@@ -34,7 +37,7 @@ public class Check implements UserDAO{
 		
 	}
 	public void login(User1 u) throws ClassNotFoundException, SQLException {
-		Connection connection=dc.getConnection();
+		Connection connection=DataChecking.getConnection();
 		String checking="select name from jdpc where name=? and password=?";
 		PreparedStatement prestm=connection.prepareStatement(checking);
 		prestm.setString(1, u.getUsername());

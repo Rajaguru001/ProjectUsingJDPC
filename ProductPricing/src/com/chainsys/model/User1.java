@@ -9,6 +9,13 @@ public class User1 implements  UserDAO {
 	String lastname;
 	String pwd;
 	String phonenumber;
+	int age;
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
 	public String getPhonenumber() {
 		return phonenumber;
 	}
