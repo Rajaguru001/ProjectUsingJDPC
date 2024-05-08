@@ -29,7 +29,7 @@ public class ProductFunction {
 		Scanner sc = new Scanner(System.in);
 		Check check = new Check();
 		ProductFunction pf = new ProductFunction();
-	//	String input = sc.next();
+		// String input = sc.next();
 		User1 u = new User1();
 		ProductSpecs ps = new ProductSpecs();
 		ProductPricing gps = new ProductPricing("gps", 60000, 10, 4, 4);
@@ -68,29 +68,36 @@ public class ProductFunction {
 
 					String phonenumber = ProductValidation.phone();
 					u.setPhonenumber(phonenumber);
-					
-					
-					int age=ProductValidation.getage();
+
+					int age = ProductValidation.getage();
 					u.setAge(age);
 
 					u.getFirstname();
 					u.getLastname();
 					u.getAge();
-				
+
 					check.Register(u);
 					System.out.println("phone number:" + u.getPhonenumber());
 				}
-
-				System.out.println("Your user Name :" + u.getUsername());
-				System.out.println("       The Products Are        ");
-				System.out.println("-------------------------------");
-				System.out.println(
-						"-->1) gps console" + "\n" + "-->2) gaming console" + "\n" + "-->3) smart home theater");
-				System.out.println("-------------------------------");
-				System.out.println("Please choose the Number 1,2,3");
-				System.out.println("-------------------------------");
+//
+//				System.out.println("Your user Name :" + u.getUsername());
+//				System.out.println("       The Products Are        ");
+//				System.out.println("-------------------------------");
+//				System.out.println("-->1) gps console" + "\n" + "-->2) gaming console" + "\n"
+//						+ "-->3) smart home theater" + "-->4)Product filter");
+//				System.out.println("-------------------------------");
+//				System.out.println("Please choose the Number 1,2,3");
+//				System.out.println("-------------------------------");
 				boolean b = true;
 				while (b) {
+					System.out.println("Your user Name :" + u.getUsername());
+					System.out.println("       The Products Are        ");
+					System.out.println("-------------------------------");
+					System.out.println("-->1) gps console" + "\n" + "-->2) gaming console" + "\n"
+							+ "-->3) smart home theater" + "-->4)Product filter");
+					System.out.println("-------------------------------");
+					System.out.println("Please choose the Number 1,2,3");
+					System.out.println("-------------------------------");
 					String nameofproduct = sc.next();
 					switch (nameofproduct.toLowerCase()) {
 					case "1":
@@ -169,19 +176,18 @@ public class ProductFunction {
 						System.out.println("Total purchase value is " + total);
 						b = false;
 						return;
-					default:
-						System.out.println("ENter valid data:");
-						nameofproduct = sc.next();
-
+					case "4":
+						check.select();
 						break;
 					}
-
+					
 				}
 
 			}
 
 		}
 	}
+
 	public static void admin() throws ClassNotFoundException, SQLException {
 		Scanner sc = new Scanner(System.in);
 		Check check = new Check();
@@ -193,7 +199,7 @@ public class ProductFunction {
 		lipwd.add("Raja#321");
 		liuser.add("vasa");
 		lipwd.add("Vasa!123");
-	String admin = sc.next();
+		String admin = sc.next();
 		System.out.println("Password");
 		String pwd = sc.next();
 		while (true) {
@@ -213,65 +219,68 @@ public class ProductFunction {
 						System.out.println(rsmd.getColumnName(i) + " : " + columnValue + " ");
 					}
 					System.out.println("");
-					
+
 				}
 				break;
 			}
-			
-		   else {
+
+			else {
 				System.out.println("Enter the correct username");
 				admin = sc.next();
 				System.out.println("Enter the correct password");
 				pwd = sc.next();
 
 			}
-			
-			}
 
-			System.out.println("1)Add Product 2)Delete Product 3)update product 4)Exit");
-			int cred = sc.nextInt();
-		switch (cred) {
-			case 1:
-				System.out.println("Product Name");
-				String productname = sc.next();
-				System.out.println("Product Cost");
-				int productcost = sc.nextInt();
-				System.out.println("Product User");
-				int productuser = sc.nextInt();
-				System.out.println("Product warranty");
-				int productwarranty = sc.nextInt();
+		}
+		while(true) {
+		System.out.println("1)Add Product 2)Delete Product 3)update product 4)select range 5)Exit");
+		int cred = sc.nextInt();
+		switch (cred) {	
+		case 1:
+			System.out.println("Product Name");
+			String productname = sc.next();
+			System.out.println("Product Cost");
+			int productcost = sc.nextInt();
+			System.out.println("Product User");
+			int productuser = sc.nextInt();
+			System.out.println("Product warranty");
+			int productwarranty = sc.nextInt();
 			System.out.println("Product Rating");
 			double productrating = sc.nextDouble();
 
-				ProductPricing pp = new ProductPricing(productname, productcost, productuser, productwarranty,
-						productrating);
+			ProductPricing pp = new ProductPricing(productname, productcost, productuser, productwarranty,
+					productrating);
 
-				check.add(pp);
-				break;
-			case 2:
-				System.out.println("Enter The ID");
-				int delete = sc.nextInt();
-				check.delete(delete);
-				break;
-			case 3:
-				System.out.println("Enter The ID");
-				System.out.println("Product Name");
-				String name = sc.next();
-				System.out.println("Product Cost");
-				int cost = sc.nextInt();
-				System.out.println("Product warranty");
-				int warranty = sc.nextInt();
-				System.out.println("Product Rating");
-				int id = sc.nextInt();
-				check.update(name, cost, warranty,id);
-				break;
-			case 4:
-				System.exit(0);
-			    break;
-			
+			check.add(pp);
+			break;
+		case 2:
+			System.out.println("Enter The ID");
+			int delete = sc.nextInt();
+			check.delete(delete);
+			break;
+		case 3:
+			System.out.println("Enter The ID");
+			System.out.println("Product Name");
+			String name = sc.next();
+			System.out.println("Product Cost");
+			int cost = sc.nextInt();
+			System.out.println("Product warranty");
+			int warranty = sc.nextInt();
+			System.out.println("Product Rating");
+			int id = sc.nextInt();
+			check.update(name, cost, warranty, id);
+			break;
+		case 4:
+			System.out.println("Enter The price Range:");
 
-			}
-		
+			check.select();
+		case 5:
+			System.exit(0);
+			break;
 
 		}
+
+	}
+	}
 }

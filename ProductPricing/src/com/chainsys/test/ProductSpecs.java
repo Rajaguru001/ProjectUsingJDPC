@@ -17,7 +17,7 @@ public class ProductSpecs {
 		System.out.println("do have membership (yes/no)?");
 		String m = scn.next();
 		System.out.println("----------------------------------------------");
-		
+
 		if (m.equalsIgnoreCase("yes")) {
 			noofwarranty += 1;
 			System.out.println("*Congrats you have now 1 year !Extra warranty*");
@@ -44,11 +44,11 @@ public class ProductSpecs {
 				System.out.println("pre Register: 20k");
 				System.out.println("Special discount for Members");
 				System.out.println("do you want to buy our product (Yes/No/exit):");
-				
+
 				String map = product.next();
 				if (map.equals("yes")) {
-					total+=15000;
-					System.out.println("Thanks for purchasing your "+total);
+					total += 15000;
+					System.out.println("Thanks for purchasing your " + total);
 				} else {
 					System.out.println("Thanks for visiting your products");
 
@@ -63,8 +63,8 @@ public class ProductSpecs {
 				System.out.println("do you want to buy our product (Yes/No/exit):");
 				String map1 = product.next();
 				if (map1.equals("yes")) {
-					total+=18000;
-					System.out.println("Thanks for purchasing your  "+total);
+					total += 18000;
+					System.out.println("Thanks for purchasing your  " + total);
 				} else {
 					System.out.println("Thanks for visiting your products");
 
@@ -79,8 +79,8 @@ public class ProductSpecs {
 				System.out.println("do you want to buy our product (Yes/No/Exit):");
 				String map2 = product.next();
 				if (map2.equals("yes")) {
-					total+=17000;
-					System.out.println("Thanks for purchasing your "+total);
+					total += 17000;
+					System.out.println("Thanks for purchasing your " + total);
 				} else {
 					System.out.println("Thanks for visiting your products");
 
@@ -103,7 +103,7 @@ public class ProductSpecs {
 
 	public int flipkartwarrentyy(int total) {
 		Scanner input = new Scanner(System.in);
-	//	ProductPricing gaming= new ProductPricing("Gaming", 70000, 10, 4,4);
+		// ProductPricing gaming= new ProductPricing("Gaming", 70000, 10, 4,4);
 		System.out.println("please choose the product (Gaming fps,Bluestack,Online games");
 		boolean b = true;
 		while (b) {
@@ -118,8 +118,8 @@ public class ProductSpecs {
 				System.out.println("do you want to buy our product (Yes/No/exit):");
 				String gamings = input.next();
 				if (gamings.equals("yes")) {
-					total+=20000;
-					System.out.println("Thanks for purchasing your "+total);
+					total += 20000;
+					System.out.println("Thanks for purchasing your " + total);
 				} else {
 					System.out.println("Thanks for visiting your products");
 
@@ -134,8 +134,8 @@ public class ProductSpecs {
 				System.out.println("do you want to buy our product (Yes/No/exit):");
 				String gaming1 = input.next();
 				if (gaming1.equals("yes")) {
-					total+=10000;
-					System.out.println("Thanks for purchasing your "+total);
+					total += 10000;
+					System.out.println("Thanks for purchasing your " + total);
 				} else {
 					System.out.println("Thanks for visiting your products");
 
@@ -150,8 +150,8 @@ public class ProductSpecs {
 				System.out.println("do you want to buy our product (Yes/No/exit):");
 				String gaming2 = input.next();
 				if (gaming2.equals("yes")) {
-					total+=25000;
-					System.out.println("Thanks for purchasing your  "+total);
+					total += 25000;
+					System.out.println("Thanks for purchasing your  " + total);
 				} else {
 					System.out.println("Thanks for visiting your products");
 
@@ -159,7 +159,7 @@ public class ProductSpecs {
 				b = false;
 				break;
 			case "exit":
-			System.exit(0);
+				System.exit(0);
 			default:
 				System.out.println("ENter the valid data");
 				product2 = input.next();
@@ -178,15 +178,15 @@ public class ProductSpecs {
 			String product3 = product.nextLine();
 			switch (product3) {
 			case "streaming movie":
-				
+
 				System.out.println("Date of release:Next month");
 				System.out.println("pre Register: 26k");
 				System.out.println("Special discount for Members");
 				System.out.println("do you want to buy our product (Yes/No/exit):");
 				String movie = product.next();
 				if (movie.equals("yes")) {
-					total+=15000;
-					System.out.println("Thanks for purchasing your "+total);
+					total += 15000;
+					System.out.println("Thanks for purchasing your " + total);
 				} else {
 					System.out.println("Thanks for visiting your products");
 
@@ -201,8 +201,8 @@ public class ProductSpecs {
 				System.out.println("do you want to buy our product (Yes/No/exit):");
 				String movie2 = product.next();
 				if (movie2.equals("yes")) {
-					total+=12000;
-					System.out.println("Thanks for purchasing your"+total);
+					total += 12000;
+					System.out.println("Thanks for purchasing your" + total);
 				} else {
 					System.out.println("Thanks for visiting your products");
 
@@ -217,8 +217,8 @@ public class ProductSpecs {
 				System.out.println("do you want to buy our product (Yes/No/Exit):");
 				String movie3 = product.next();
 				if (movie3.equals("yes")) {
-					total+=14000;
-					System.out.println("Thanks for purchasing your "+total);
+					total += 14000;
+					System.out.println("Thanks for purchasing your " + total);
 				} else {
 					System.out.println("Thanks for visiting your products");
 
@@ -226,10 +226,9 @@ public class ProductSpecs {
 				b = false;
 				break;
 			case "exit":
-				
+
 				System.exit(0);
-				
-			
+
 			default:
 				System.out.println("ENter the valid data");
 				product3 = product.next();

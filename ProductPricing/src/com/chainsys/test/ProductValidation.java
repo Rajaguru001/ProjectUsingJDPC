@@ -72,8 +72,8 @@ public class ProductValidation {
 
 			} catch (InputMismatchException ex) {
 				System.out.println("Exception occured: " + ex);
-				System.out.println("enter age greater 8:");
-				age = sc.nextInt();
+				System.out.println("enter age in integer :");
+				sc.next();
 			}
 		}
 
